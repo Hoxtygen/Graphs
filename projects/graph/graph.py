@@ -108,7 +108,22 @@ class Graph:
         starting_vertex to destination_vertex in
         depth-first order.
         """
-        pass  # TODO
+        s = Stack()
+        s.push([starting_vertex])
+        obtained = []
+        while s.size() > 0:
+            road = s.pop()
+            print(f'road: {road}')
+            x = road[-1]
+            if x not in  obtained:
+                if x == destination_vertex:
+                    return road
+                obtained.append(x)
+                for next_vertice in self.vertices[x]:
+                    new_road = list(road)
+                    new_road.append(next_vertice)
+                    s.push(new_road)
+
 
 
 
