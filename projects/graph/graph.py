@@ -20,6 +20,8 @@ class Graph:
         """
         if v1 in self.vertices and v2 in self.vertices:
             self.vertices[v1].add(v2)
+        else:
+            raise KeyError("That vertex does not exist")
             
 
     
@@ -47,7 +49,12 @@ class Graph:
         Print each vertex in depth-first order
         beginning from starting_vertex.
         """
-        pass  # TODO
+        s = Stack(self.vertices)
+        visited = set()
+        while s.size() > 0:
+            pass
+
+
     def dft_recursive(self, starting_vertex):
         """
         Print each vertex in depth-first order
